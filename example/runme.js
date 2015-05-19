@@ -153,6 +153,7 @@ imports.forEach( function( shp ){
       .pipe( through.obj( function( item, enc, next ){
         var id = item.id;
         delete item.id;
+        item.shingle = item.name;
         this.push({
           _index: 'pelias',
           _type: shp.type,
